@@ -1,3 +1,90 @@
+body {
+  background-color: #000000;
+  color: #ffffff;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+h1,
+h2 {
+  color: #d4af37;
+}
+
+.gold-text {
+  color: #d4af37;
+}
+
+.profile-image {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border: 3px solid #d4af37;
+  margin-bottom: 20px;
+}
+
+/* Section Styling */
+.section-home,
+.section-skills,
+.section-about,
+.section-contact {
+  padding: 20px;
+}
+
+/* Skills List Styling */
+.skills-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.skills-list li {
+  background-color: #333333;
+  color: #d4af37;
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 5px;
+}
+
+/* Helpful Links Styling */
+.social-links {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.social-links a {
+  font-size: 32px;
+  color: #d4af37;
+  text-decoration: none;
+  margin: 0 15px;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #ffffff;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+  .skills-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .social-links {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profile-image {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+
 .App {
   text-align: center;
 }
@@ -32,6 +119,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
