@@ -1,17 +1,25 @@
 import React from "react";
 import { Navbar, Nav } from "react-bootstrap";
+import "./Header.css";
 
 const Header: React.FC = () => {
   return (
-    <Navbar bg="dark" variant="dark" expand="lg">
-      <Navbar.Brand href="#home">My Portfolio</Navbar.Brand>
+    <Navbar expand="lg" className="header-navbar">
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="ml-auto">
-          <Nav.Link href="#work">Work</Nav.Link>
-          <Nav.Link href="#skills">Skills</Nav.Link>
-          <Nav.Link href="#about">About Me</Nav.Link>
-          <Nav.Link href="#contact">Contact</Nav.Link>
+          <Nav.Link href="#work" className="header-link">
+            Work
+          </Nav.Link>
+          <Nav.Link href="#skills" className="header-link">
+            Skills
+          </Nav.Link>
+          <Nav.Link href="#about" className="header-link">
+            About Me
+          </Nav.Link>
+          <Nav.Link href="#contact" className="header-link">
+            Contact
+          </Nav.Link>
         </Nav>
       </Navbar.Collapse>
     </Navbar>

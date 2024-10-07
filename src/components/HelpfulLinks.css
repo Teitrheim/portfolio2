@@ -1,6 +1,9 @@
 .helpful-links {
-    text-align: center;
-    margin: 50px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    gap: 20px;
 }
 
 .helpful-links h3 {
@@ -30,4 +33,21 @@
 .link-icon span {
     margin-top: 10px;
     font-size: 1.1rem;
+}
+
+.helpful-icon {
+    font-size: 32px;
+    color: #d4af37;
+    transition: color 0.3s ease;
+}
+
+.helpful-icon:hover {
+    color: #ffffff;
+}
+
+@media (max-width: 768px) {
+    .helpful-links {
+        flex-direction: column;
+        gap: 10px;
+    }
 }

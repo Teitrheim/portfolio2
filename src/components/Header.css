@@ -1,0 +1,21 @@
+.header-navbar {
+    background-color: #000000 !important;
+    border-bottom: 2px solid #d4af37;
+}
+
+.header-link,
+.navbar-nav .nav-link {
+    color: #ffffff !important;
+}
+
+.navbar-toggler {
+    border-color: #ffffff !important;
+}
+
+.navbar-toggler-icon {
+    background-color: #ffffff;
+}
+
+.navbar-collapse {
+    background-color: #000000;
+}
