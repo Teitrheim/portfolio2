@@ -14,7 +14,7 @@ const App: React.FC = () => {
         <section id="home" className="text-center my-5">
           <h1>Welcome to My Portfolio</h1>
           <img
-            src="/assets/my_photo.jpg"
+            src="/src/assets/selfie.png"
             alt="My Photo"
             className="rounded-circle"
             width="150"
@@ -50,7 +50,7 @@ const App: React.FC = () => {
             studying at Noroff.
           </p>
           <img
-            src="/assets/my_photo.jpg"
+            src="/src/assets/a-handsome-blonde-man-with-a-big-beard-709007991.png"
             alt="My Photo"
             className="rounded-circle"
             width="150"
