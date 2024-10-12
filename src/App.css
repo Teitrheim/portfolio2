@@ -16,8 +16,8 @@ h2 {
 
 .profile-image {
   border-radius: 50%;
-  width: 150px;
-  height: 150px;
+  width: 200px;
+  height: 200px;
   object-fit: cover;
   border: 3px solid #d4af37;
   margin-bottom: 20px;
@@ -76,6 +76,8 @@ h2 {
 .section-contact {
   padding: 20px;
 }
+
+
 
 /* Skills List Styling */
 .skills-list {
