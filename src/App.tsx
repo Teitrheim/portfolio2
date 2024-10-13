@@ -67,18 +67,18 @@ const App: React.FC = () => {
     },
     {
       image: projectImage2,
-      title: "JavaScript Frameworks CA",
+      title: "E-Commerce Store",
       description:
-        "An eCommerce website built using React. It features multiple pages such as a homepage, product pages, a cart, and a checkout page.",
+        "An eCommerce website built using React. It features a homepage, product pages, a cart, and a checkout page.",
       link: "https://guileless-puppy-75e10b.netlify.app",
       repo: "https://github.com/Teitrheim/Front-end-Frameworks",
     },
     {
       image: projectImage3,
-      title: "Project Exam 2",
+      title: "Exam Project Holidaze",
       description:
         "A project involving complex data fetching and state management, showcasing advanced React skills.",
-      link: "https://project-exam-2.netlify.app",
+      link: "https://shiny-wisp-e94719.netlify.app/",
       repo: "https://github.com/Teitrheim/Project-Exam-2",
     },
   ];

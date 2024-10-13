@@ -3,6 +3,7 @@ body {
   background-color: #000000 !important;
   color: #ffffff !important;
   font-family: 'Roboto Condensed', sans-serif !important;
+  font-size: var(--text-size, 16px);
 }
 
 h1,
