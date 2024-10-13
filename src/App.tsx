@@ -9,15 +9,31 @@ import handsomeManImage from "./assets/a-handsome-blonde-man-with-a-big-beard-70
 import projectImage1 from "./assets/Screenshot zany.png";
 import projectImage2 from "./assets/java2.png";
 import projectImage3 from "./assets/exam2.png";
+import resumePdf from "./assets/CV Thomas Eitrheim.pdf";
 
 const App: React.FC = () => {
   const [darkMode, setDarkMode] = useState(true);
+  const [textSize, setTextSize] = useState(16);
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
   };
 
+  const increaseTextSize = () => {
+    const newSize = Math.min(textSize + 2, 24);
+    setTextSize(newSize);
+    document.documentElement.style.setProperty("--text-size", `${newSize}px`);
+  };
+
+  const decreaseTextSize = () => {
+    const newSize = Math.max(textSize - 2, 12);
+    setTextSize(newSize);
+    document.documentElement.style.setProperty("--text-size", `${newSize}px`);
+  };
+
   useEffect(() => {
+    document.documentElement.style.setProperty("--text-size", `${textSize}px`);
+
     const scrollToTopBtn = document.getElementById("scrollToTopBtn");
 
     const handleScroll = () => {
@@ -38,7 +54,7 @@ const App: React.FC = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [textSize]);
 
   const projects = [
     {
@@ -70,10 +86,20 @@ const App: React.FC = () => {
   return (
     <div className={`App ${darkMode ? "dark-mode" : "light-mode"}`}>
       <Header />
-      <button onClick={toggleDarkMode} className="toggle-dark-mode">
-        {darkMode ? "Light Mode" : "Dark Mode"}
-      </button>
-      <Container>
+      <div className="controls-container">
+        <button onClick={toggleDarkMode} className="toggle-dark-mode">
+          {darkMode ? "Light Mode" : "Dark Mode"}
+        </button>
+        <div className="text-size-buttons">
+          <button onClick={increaseTextSize} className="text-resize-button">
+            A+
+          </button>
+          <button onClick={decreaseTextSize} className="text-resize-button">
+            A-
+          </button>
+        </div>
+      </div>
+      <Container className="main-container">
         <section id="home" className="text-center my-5 section-home">
           <h1 className="gold-text">Building the Future</h1>
           <img src={selfieImage} alt="My Photo" className="profile-image" />
@@ -81,6 +107,14 @@ const App: React.FC = () => {
             I&apos;m Thomas Eitrheim, a front-end developer with expertise in
             creating engaging web experiences.
           </p>
+          <Button
+            href={resumePdf}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="custom-button"
+          >
+            Download Resume
+          </Button>
         </section>
 
         <section id="work" className="my-5 section-work">
@@ -122,20 +156,25 @@ const App: React.FC = () => {
 
         <section id="skills" className="my-5 section-skills">
           <h2 className="gold-text">My Skills</h2>
-          <ul className="skills-list">
-            <li>JavaScript (ES6+)</li>
-            <li>React & TypeScript</li>
-            <li>HTML & CSS</li>
-            <li>Bootstrap, Responsive Design</li>
-            <li>Git & Version Control</li>
-            <li>WordPress</li>
-            <li>Figma</li>
-          </ul>
+          <div className="skills-bars">
+            <div className="skill">
+              <span className="gold-text skill-label">JavaScript</span>
+              <div className="skill-bar skill-javascript"></div>
+            </div>
+            <div className="skill">
+              <span className="gold-text skill-label">React & TypeScript</span>
+              <div className="skill-bar skill-react"></div>
+            </div>
+            <div className="skill">
+              <span className="gold-text skill-label">HTML & CSS</span>
+              <div className="skill-bar skill-html"></div>
+            </div>
+          </div>
         </section>
 
         <section id="about" className="my-5 section-about">
           <h2 className="gold-text">About Me</h2>
-          <p>
+          <p className="about-text">
             Welcome to my portfolio! My name is Thomas Eitrheim. I find immense
             joy in everything about front-end development and am dedicated to
             creating engaging and responsive web experiences. This website
@@ -147,7 +186,7 @@ const App: React.FC = () => {
             alt="My Photo"
             className="about-profile-image"
           />
-          <p>
+          <p className="about-text">
             I believe in clean and efficient code to bring all my ideas to life.
             Feel free to explore my work and get in touch if you have any
             questions or collaboration opportunities.
@@ -178,17 +217,16 @@ const App: React.FC = () => {
         </section>
 
         <HelpfulLinks />
-
-        <div
-          id="scrollToTopBtn"
-          title="Go to top"
-          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="scroll-to-top"
-        >
-          ↑
-        </div>
       </Container>
       <Footer />
+      <div
+        id="scrollToTopBtn"
+        title="Go to top"
+        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        className="scroll-to-top"
+      >
+        ↑
+      </div>
     </div>
   );
 };

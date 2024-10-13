@@ -17,7 +17,7 @@ const workItems = [
   {
     title: "Project Exam 2",
     description: "A dynamic web application...",
-    link: "https://projectexam2.netlify.app",
+    link: "https://shiny-wisp-e94719.netlify.app",
     image: "project_image.jpg", // Place in src/assets/
   },
 ];
@@ -32,7 +32,11 @@ const WorkCards: React.FC = () => {
             <Card.Body>
               <Card.Title>{item.title}</Card.Title>
               <Card.Text>{item.description}</Card.Text>
-              <Button variant="primary" href={item.link} target="_blank">
+              <Button
+                className="custom-button"
+                href={item.link}
+                target="_blank"
+              >
                 View Project
               </Button>
             </Card.Body>

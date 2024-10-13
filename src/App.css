@@ -8,14 +8,17 @@ body {
 h1,
 h2 {
   color: #d4af37;
+  margin-top: 0;
 }
 
 .gold-text {
   color: #d4af37;
+  margin-top: 50px;
 }
 
 .profile-image {
-  width: 300px;
+  margin-top: 10px;
+  width: 180px;
   height: auto;
   object-fit: contain;
   border: 3px solid #d4af37;
@@ -23,6 +26,7 @@ h2 {
 }
 
 .project-cards-container {
+  margin-top: 20px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -51,14 +55,23 @@ h2 {
   margin-top: 10px;
 }
 
+.button-container {
+  position: fixed;
+  top: 15px;
+  right: 20px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
 .custom-button {
-  background-color: #d4af37;
-  border: none;
-  color: #000000;
-  font-weight: bold;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
+  background-color: #d4af37 !important;
+  border: none !important;
+  color: #000000 !important;
+  font-weight: bold !important;
+  padding: 10px 20px !important;
+  text-align: center !important;
+  text-decoration: none !important;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -70,9 +83,9 @@ h2 {
 }
 
 .custom-button:hover {
-  background-color: #ffffff;
-  color: #000000;
-  border: 1px solid #d4af37;
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  border: 1px solid #d4af37 !important;
 }
 
 .about-profile-image {
@@ -83,16 +96,57 @@ h2 {
   margin-bottom: 20px;
 }
 
+.skill {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 80%;
+  margin: 10px auto;
+}
+
+.skill-bar {
+  height: 20px;
+  background-color: #d4af37;
+  width: 0;
+  transition: width 1.5s ease;
+  border-radius: 5px;
+}
+
+.text-resize-button {
+  padding: 5px 10px;
+  background-color: #d4af37;
+  border: none;
+  border-radius: 5px;
+  color: #000;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 14px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.text-resize-button:hover {
+  background-color: #ffffff;
+  color: #000000;
+}
 
 /* Section Styling */
-.section-home,
 .section-skills,
 .section-about,
 .section-contact {
-  padding: 20px;
+  padding: 10px 0;
+  margin-top: -20px;
 }
 
+#home,
+.section-home {
+  padding: 0;
+  margin-top: 0;
+}
 
+.section-home {
+  padding: 10px 0 0 0;
+  margin-top: -30px;
+}
 
 /* Skills List Styling */
 .skills-list {
@@ -103,12 +157,91 @@ h2 {
   justify-content: center;
 }
 
+.skill-label {
+  font-size: 20px;
+  font-weight: bold;
+  color: #d4af37;
+  width: 150px;
+  margin-right: 20px;
+}
+
+.about-text {
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+/* Controls Styling */
+.controls-container {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-bottom: 15px;
+  position: fixed;
+  top: 15px;
+  right: 20px;
+  z-index: 10;
+  flex-direction: row;
+}
+
+.text-size-buttons {
+  display: flex;
+  gap: 5px;
+}
+
 .skills-list li {
   background-color: #333333;
   color: #d4af37;
   padding: 10px 20px;
   margin: 10px;
   border-radius: 5px;
+}
+
+/* Animated Skills Bars */
+.skills-bars {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.skill-label {
+  font-size: 20px;
+  font-weight: bold;
+  color: #d4af37;
+  margin-right: 20px;
+}
+
+.skill {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  margin: 10px 0;
+}
+
+.skill-bar {
+  flex-grow: 1;
+  height: 20px;
+  background-color: #d4af37;
+  border-radius: 5px;
+  animation: fillSkill 2s forwards;
+}
+
+@keyframes fillSkill {
+  to {
+    width: 100%;
+  }
+}
+
+.skill-javascript {
+  width: 90%;
+}
+
+.skill-react {
+  width: 85%;
+}
+
+.skill-html {
+  width: 95%;
 }
 
 /* Helpful Links Styling */
@@ -130,7 +263,6 @@ h2 {
   color: #ffffff;
 }
 
-
 /* Dark and Light Mode Styling */
 .dark-mode {
   background-color: #000000;
@@ -144,9 +276,6 @@ h2 {
 
 /* Dark/Light Mode Button */
 .toggle-dark-mode {
-  position: fixed;
-  top: 15px;
-  right: 20px;
   padding: 5px 10px;
   background-color: #d4af37;
   border: none;
@@ -162,7 +291,6 @@ h2 {
   background-color: #ffffff;
   color: #000000;
 }
-
 
 /* Scroll to Top Button */
 .scroll-to-top {
@@ -183,7 +311,6 @@ h2 {
   background-color: #fff;
   transform: scale(1.1);
 }
-
 
 /* Responsive Media Queries */
 @media (max-width: 768px) {
