@@ -4,7 +4,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import HelpfulLinks from "./components/HelpfulLinks";
 import { Container, Card, Button } from "react-bootstrap";
-import selfieImage from "./assets/jobbbilde.jpg";
+import selfieImage from "./assets/jobbbilde2.jpg";
 import handsomeManImage from "./assets/a-handsome-blonde-man-with-a-big-beard-709007991.png";
 import projectImage1 from "./assets/Screenshot zany.png";
 import projectImage2 from "./assets/java2.png";
