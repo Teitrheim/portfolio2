@@ -1,16 +1,45 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import HelpfulLinks from "./components/HelpfulLinks";
 import { Container, Card, Button } from "react-bootstrap";
-import selfieImage from "./assets/selfie.png";
+import selfieImage from "./assets/jobbbilde.jpg";
 import handsomeManImage from "./assets/a-handsome-blonde-man-with-a-big-beard-709007991.png";
 import projectImage1 from "./assets/Screenshot zany.png";
 import projectImage2 from "./assets/java2.png";
 import projectImage3 from "./assets/exam2.png";
 
 const App: React.FC = () => {
+  const [darkMode, setDarkMode] = useState(true);
+
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+  };
+
+  useEffect(() => {
+    const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+    const handleScroll = () => {
+      if (!scrollToTopBtn) return;
+
+      if (
+        document.body.scrollTop > 300 ||
+        document.documentElement.scrollTop > 300
+      ) {
+        scrollToTopBtn.style.display = "block";
+      } else {
+        scrollToTopBtn.style.display = "none";
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   const projects = [
     {
       image: projectImage1,
@@ -39,8 +68,11 @@ const App: React.FC = () => {
   ];
 
   return (
-    <div className="App">
+    <div className={`App ${darkMode ? "dark-mode" : "light-mode"}`}>
       <Header />
+      <button onClick={toggleDarkMode} className="toggle-dark-mode">
+        {darkMode ? "Light Mode" : "Dark Mode"}
+      </button>
       <Container>
         <section id="home" className="text-center my-5 section-home">
           <h1 className="gold-text">Building the Future</h1>
@@ -113,7 +145,7 @@ const App: React.FC = () => {
           <img
             src={handsomeManImage}
             alt="My Photo"
-            className="profile-image"
+            className="about-profile-image"
           />
           <p>
             I believe in clean and efficient code to bring all my ideas to life.
@@ -125,9 +157,36 @@ const App: React.FC = () => {
         <section id="contact" className="my-5 section-contact">
           <h2 className="gold-text">Contact Me</h2>
           <p>Email: teitrheim@gmail.com</p>
+          <div className="contact-links">
+            <a
+              href="https://github.com/Teitrheim"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="custom-button"
+            >
+              GitHub
+            </a>
+            <a
+              href="https://www.linkedin.com/in/thomas-eitrheim"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="custom-button"
+            >
+              LinkedIn
+            </a>
+          </div>
         </section>
 
         <HelpfulLinks />
+
+        <div
+          id="scrollToTopBtn"
+          title="Go to top"
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          className="scroll-to-top"
+        >
+          ↑
+        </div>
       </Container>
       <Footer />
     </div>

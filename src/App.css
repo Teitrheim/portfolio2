@@ -15,10 +15,9 @@ h2 {
 }
 
 .profile-image {
-  border-radius: 50%;
-  width: 200px;
-  height: 200px;
-  object-fit: cover;
+  width: 300px;
+  height: auto;
+  object-fit: contain;
   border: 3px solid #d4af37;
   margin-bottom: 20px;
 }
@@ -63,11 +62,27 @@ h2 {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+.contact-links {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 20px;
+}
+
 .custom-button:hover {
   background-color: #ffffff;
   color: #000000;
   border: 1px solid #d4af37;
 }
+
+.about-profile-image {
+  width: 300px;
+  height: auto;
+  object-fit: contain;
+  border: 3px solid #d4af37;
+  margin-bottom: 20px;
+}
+
 
 /* Section Styling */
 .section-home,
@@ -114,6 +129,61 @@ h2 {
 .social-links a:hover {
   color: #ffffff;
 }
+
+
+/* Dark and Light Mode Styling */
+.dark-mode {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.light-mode {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* Dark/Light Mode Button */
+.toggle-dark-mode {
+  position: fixed;
+  top: 15px;
+  right: 20px;
+  padding: 5px 10px;
+  background-color: #d4af37;
+  border: none;
+  border-radius: 5px;
+  color: #000;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.toggle-dark-mode:hover {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+
+/* Scroll to Top Button */
+.scroll-to-top {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 24px;
+  background-color: #d4af37;
+  color: #000;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.scroll-to-top:hover {
+  background-color: #fff;
+  transform: scale(1.1);
+}
+
 
 /* Responsive Media Queries */
 @media (max-width: 768px) {
