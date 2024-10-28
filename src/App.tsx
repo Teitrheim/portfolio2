@@ -9,7 +9,7 @@ import handsomeManImage from "./assets/a-handsome-blonde-man-with-a-big-beard-70
 import projectImage1 from "./assets/Screenshot zany.png";
 import projectImage2 from "./assets/java2.png";
 import projectImage3 from "./assets/exam2.png";
-import resumePdf from "./assets/CV Thomas Eitrheim.pdf";
+import resumePdf from "./assets/CV Thomas Eitrheim3.pdf";
 
 const App: React.FC = () => {
   const [darkMode, setDarkMode] = useState(true);
