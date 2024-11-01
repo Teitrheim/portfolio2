@@ -79,7 +79,7 @@ const App: React.FC = () => {
       description:
         "A project involving complex data fetching and state management, showcasing advanced React skills.",
       link: "https://shiny-wisp-e94719.netlify.app/",
-      repo: "https://github.com/Teitrheim/Project-Exam-2",
+      repo: "https://github.com/Teitrheim/Holidaze.git",
     },
   ];
 
