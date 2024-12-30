@@ -4,7 +4,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import HelpfulLinks from "./components/HelpfulLinks";
 import { Container, Card, Button } from "react-bootstrap";
-import selfieImage from "./assets/jobbbilde2.jpg";
+import selfieImage from "./assets/profil.jpg";
 import handsomeManImage from "./assets/a-handsome-blonde-man-with-a-big-beard-709007991.png";
 import projectImage1 from "./assets/Screenshot zany.png";
 import projectImage2 from "./assets/java2.png";
@@ -13,27 +13,12 @@ import resumePdf from "./assets/Ny CV.pdf";
 
 const App: React.FC = () => {
   const [darkMode, setDarkMode] = useState(true);
-  const [textSize, setTextSize] = useState(16);
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
   };
 
-  const increaseTextSize = () => {
-    const newSize = Math.min(textSize + 2, 24);
-    setTextSize(newSize);
-    document.documentElement.style.setProperty("--text-size", `${newSize}px`);
-  };
-
-  const decreaseTextSize = () => {
-    const newSize = Math.max(textSize - 2, 12);
-    setTextSize(newSize);
-    document.documentElement.style.setProperty("--text-size", `${newSize}px`);
-  };
-
   useEffect(() => {
-    document.documentElement.style.setProperty("--text-size", `${textSize}px`);
-
     const scrollToTopBtn = document.getElementById("scrollToTopBtn");
 
     const handleScroll = () => {
@@ -54,7 +39,7 @@ const App: React.FC = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [textSize]);
+  }, []);
 
   const projects = [
     {
@@ -90,14 +75,6 @@ const App: React.FC = () => {
         <button onClick={toggleDarkMode} className="toggle-dark-mode">
           {darkMode ? "Light Mode" : "Dark Mode"}
         </button>
-        <div className="text-size-buttons">
-          <button onClick={increaseTextSize} className="text-resize-button">
-            A+
-          </button>
-          <button onClick={decreaseTextSize} className="text-resize-button">
-            A-
-          </button>
-        </div>
       </div>
       <Container className="main-container">
         <section id="home" className="text-center my-5 section-home">
@@ -206,7 +183,7 @@ const App: React.FC = () => {
               GitHub
             </a>
             <a
-              href="https://www.linkedin.com/in/thomas-eitrheim"
+              href="https://www.linkedin.com/in/thomas-eitrheim-1a7b461a8"
               target="_blank"
               rel="noopener noreferrer"
               className="custom-button"

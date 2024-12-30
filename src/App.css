@@ -2,14 +2,19 @@ body {
   margin: 0;
   background-color: #000000 !important;
   color: #ffffff !important;
-  font-family: 'Roboto Condensed', sans-serif !important;
+  font-family: 'Poppins', sans-serif !important;
   font-size: var(--text-size, 16px);
 }
 
 h1,
 h2 {
+  font-family: 'Poppins', sans-serif !important;
   color: #d4af37;
   margin-top: 0;
+}
+
+p {
+  font-family: 'Poppins', sans-serif !important;
 }
 
 .gold-text {
